@@ -155,14 +155,14 @@ def main():
     API_URL = "https://operations-api.access-ci.org/wh2/cider/v1/access-allocated/"
     print("[INFO] Fetching data from API...")
 
-    # Base output path
+    # Base output path - change this to your actual folder on Steam Deck or your system
     base_path = "/run/media/deck/GF8S5/DOWNLOADS/Illinois Internship/Project Folder Rest APIs into text"
 
-    # Create dynamic folder name with today's date and time
+    # Create dynamic folder name with today's date (e.g., summaries_2025_07_18_15_30_00)
     now_str = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
     output_dir = os.path.join(base_path, f"summaries_{now_str}")
 
-    # Make sure the new dated+timed folder exists
+    # Make sure the new dated folder exists
     os.makedirs(output_dir, exist_ok=True)
 
     data = fetch_api_data(API_URL)
